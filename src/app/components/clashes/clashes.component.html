@@ -1,0 +1,57 @@
+<h1>Confrontos</h1>
+<p>Os confrontos são definidos automaticamente.</p>
+<p>Você deverá informar os pontos de cada partida para definir os vencedores que irão avançar para a próxima fase.</p>
+
+<hr class="my-5">
+
+<div id="key">
+
+  <div class="column-clashe">
+    <div class="clashes">
+      <div class="ax align">
+        {{semi[0].teamName}}
+        <input [(ngModel)]="semi[0].points" type="number" placeholder="pontos" min="0" max="100">
+      </div>
+      <div class="ay align">
+        {{semi[1].teamName}}
+        <input [(ngModel)]="semi[1].points" type="number" placeholder="pontos" min="0" max="100">
+      </div>
+    </div>
+
+    <div class="clashes" style="margin-left: -17px;">
+      <div class="ax align">
+        {{semi[2].teamName}}
+        <input [(ngModel)]="semi[2].points" type="number" placeholder="pontos" min="0" max="100">
+      </div>
+      <div class="ay align">
+        {{semi[3].teamName}}
+        <input [(ngModel)]="semi[3].points" type="number" placeholder="pontos" min="0" max="100">
+      </div>
+    </div>
+    <button class="btn btn-primary mt-3" type="button" (click)="closeSemi()">próxima fase</button>
+  </div>
+
+  <div *ngIf="final" class="column-clashe">
+    <div class="clashes">
+      <div class="ax align">
+        {{final[0].teamName}}
+        <input [(ngModel)]="final[0].points" type="number" placeholder="pontos" min="0" max="100">
+      </div>
+      <div class="ay align">
+        {{final[1].teamName}}
+        <input [(ngModel)]="final[1].points" type="number" placeholder="pontos" min="0" max="100">
+      </div>
+    </div>
+    <button class="btn btn-primary" type="button" (click)="closeFinal()">próxima fase</button>
+  </div>
+
+  <div *ngIf="champion" class="column-clashe">
+    <div class="clashes">
+      <div class="ax">
+        {{champion.teamName}}
+      </div>
+    </div>
+    <p>O salvador de Valoran! (<small>{{champion.region}}</small>)</p>
+  </div>
+
+</div>

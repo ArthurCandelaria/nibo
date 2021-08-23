@@ -1,0 +1,28 @@
+<h2>Registrar equipe</h2>
+
+<!-- Team registration form -->
+
+  <form [formGroup]="teamValoran" (submit)="registerTeam()">
+
+    <div class="form-group">
+      <label class="col-form-label">Nome da equipe</label>
+      <input formControlName="teamName" class="form-control form-control-sm">
+    </div>
+
+    <div class="form-group d-flex flex-column">
+      <label class="col-form-label">Região</label>
+      <ng-container *ngFor="let type of typesTeam; let i = index">
+        <div class="form-check form-check-inline">
+          <label class="form-check-label" for={{type}}>{{type}}</label>
+          <input class="form-check-input" type="radio" id=radio{{i}} value={{type}} formControlName="region">
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="d-grid gap-2">
+      <button type="submit" [disabled]="teamValoran.invalid" class="btn btn-primary">registrar</button>
+    </div>
+
+  </form>
+
+  <!-- /Team registration form -->

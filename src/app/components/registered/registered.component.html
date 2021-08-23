@@ -1,0 +1,31 @@
+<h2 class="mb-3">Equipes registradas (
+  <small [innerHtml]="teams?.length === null ? '0' : teams.length"></small>
+  )</h2>
+<div class="content-teams">
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Região</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let team of teams">
+        <td>{{team.teamName}}</td>
+        <td>{{team.region}}</td>
+        <td>
+          <button type="button" class="btn btn-danger" (click)="deleteTeam(team)">
+            <i class="bi bi-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+<div class="d-grid gap-2">
+  <button type="button" class="btn btn-success" [disabled]="teams?.length != 4" [routerLink]="['/clashes']"
+    routerLinkActive="router-link-active">iniciar confrontos</button>
+</div>

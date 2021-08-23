@@ -1,0 +1,19 @@
+<h1>XII Torneio Valoriano</h1>
+<p>Você foi convocado a participar do mais empolgante desafio de sua vida: acabar com os intermináveis conflitos em
+  Valoran. A nação humana de Demacia, o assombroso império de Noxus e os moradores de todas as cidades-estado aguardam
+  ansiosamente por este momento.</p>
+
+<p>Cadastre suas equipes e descubra quem será o salvador de Valoran!</p>
+
+<hr class="my-5">
+
+<p>Você deve registrar 4 equipes.</p>
+
+<div class="row">
+  <section class="col-md-6 col-sm-12">
+    <app-registered [teams]="teams"></app-registered>
+  </section>
+  <section class="col-md-6 col-sm-12">
+    <app-register (listener)="reciverFeedback($event)"></app-register>
+  </section>
+</div>
